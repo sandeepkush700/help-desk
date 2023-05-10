@@ -8,4 +8,6 @@ export class EndpointService {
   constructor() { }
 
   hostUrl: string = "";
+
+  userApi: string = `${this.hostUrl}/api/session.php`;
 }

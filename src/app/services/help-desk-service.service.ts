@@ -8,4 +8,8 @@ import{EndpointService} from './endpoint.service'
 export class HelpDeskServiceService {
 
   constructor(private service:EndpointService, private http:HttpClient) { }
+
+  getUserFormData(formData){
+    return this.http.post(this.service.userApi,formData).toPromise();
+  }
 }
