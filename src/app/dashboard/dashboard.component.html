@@ -46,43 +46,44 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
 
                     <div class="mb-3">
                         <label for="lname" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="lname" formControlName="lastname">
+                        <input type="text" class="form-control" name="lname" id="lname" formControlName="lname">
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email ID</label>
-                        <input type="text" class="form-control" id="email" formControlName="email">
+                        <input type="text" class="form-control" name="email" id="email" formControlName="email">
                     </div>
 
                     <div class="mb-3">
                         <label for="mobile" class="form-label">Mobile</label>
-                        <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                        <input type="text" class="form-control" name="mobile" id="mobile" formControlName="mobile">
                       </div>
 
                       <div class="mb-3">
-                        <label for="salary" class="form-label">Department</label>
-                        <input type="text" class="form-control" id="salary" formControlName="salary">
+                        <label for="department" class="form-label">Department</label>
+                        <input type="text" class="form-control" name="department" id="department" formControlName="department">
                       </div>
 
                       <div class="mb-3">
-                        <label for="salary" class="form-label">Query</label>
-                        <input type="text" class="form-control" id="salary" formControlName="salary">
+                        <label for="query" class="form-label">Query</label>
+                        <input type="text" class="form-control" name="query" id="query" formControlName="query">
                       </div>
 
                       <div class="mb-3">
-                        <label for="salary" class="form-label">File</label>
-                        <input type="file" class="form-control" id="salary" formControlName="salary">
+                        <label for="file" class="form-label">File</label>
+                        <input type="file" class="form-control" name="file" id="file" formControlName="file">
                       </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
-            </div>
+           
         </div>
     </div>
 </div>
