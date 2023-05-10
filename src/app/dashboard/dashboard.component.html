@@ -1,0 +1,89 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color:white">Helpdesk Ticketing</h1>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success ">Add
+            Query</button>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Department</th>
+            <th scope="col">Query</th>
+            <th scope="col">File</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Mantosh Yadav</td>
+            <td>mantoshyadav9@gmail.com</td>
+            <td>9015799095</td>
+            <td>IT Department</td>
+            <td>System not working</td>
+            <td>image.jpg</td>
+            <td>
+                <button class="btn btn-info">Edit</button>
+                <button class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Model Start Here -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Fill below detail!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="mb-3">
+                        <label for="lname" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="lname" formControlName="lastname">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email ID</label>
+                        <input type="text" class="form-control" id="email" formControlName="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mobile" class="form-label">Mobile</label>
+                        <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="salary" class="form-label">Department</label>
+                        <input type="text" class="form-control" id="salary" formControlName="salary">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="salary" class="form-label">Query</label>
+                        <input type="text" class="form-control" id="salary" formControlName="salary">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="salary" class="form-label">File</label>
+                        <input type="file" class="form-control" id="salary" formControlName="salary">
+                      </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Model End Here -->
