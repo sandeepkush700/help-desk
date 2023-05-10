@@ -75,7 +75,7 @@
 
                       <div class="mb-3">
                         <label for="file" class="form-label">File</label>
-                        <input type="file" class="form-control" name="file" id="file" formControlName="file">
+                        <input type="file" class="form-control" name="file" id="file" formControlName="file" (change)="onImageUpload($event)">
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
