@@ -9,7 +9,7 @@ import { HelpDeskCommomService } from '../services/help-desk-commom.service'
 })
 export class DashboardComponent {
   registrationform: FormGroup | any
-  uploadedImage: File |undefined
+  uploadedImage: File | undefined
 
   constructor(private commonservice: HelpDeskCommomService) { }
 
@@ -20,29 +20,28 @@ export class DashboardComponent {
   createForm() {
 
     this.registrationform = new FormGroup({
-      lname: new FormControl(''),
+      name: new FormControl(''),
       email: new FormControl(''),
       mobile: new FormControl(''),
       department: new FormControl(''),
       query: new FormControl(''),
       file: new FormControl('')
 
-    }) 
+    })
   }
 
-  public onImageUpload(event:any) {
+  public onImageUpload(event: any) {
     this.uploadedImage = event.target.files[0];
     console.log(this.uploadedImage)
-}
-  onSubmit() {
+  }
+ async onSubmit() {
     console.log(this.registrationform.value)
-    let lname = this.registrationform.value.lname;
+    let name = this.registrationform.value.name;
     let email = this.registrationform.value.email;
     let mobile = this.registrationform.value.mobile;
     let department = this.registrationform.value.department;
     let query = this.registrationform.value.query;
-    // let file = this.registrationform.value.file;
 
-    this.commonservice.getUserFormData(lname,email,mobile,department,query,this.uploadedImage)
+   await this.commonservice.getUserFormData(name, email, mobile, department, query, this.uploadedImage)
   }
 }
