@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms'
+import { HelpDeskCommomService } from '../services/help-desk-commom.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms'
 })
 export class DashboardComponent {
   registrationform: FormGroup | any
+
+  constructor(private commonservice: HelpDeskCommomService) { }
 
   ngOnInit() {
     this.createForm()
@@ -26,7 +29,14 @@ export class DashboardComponent {
     })
   }
   onSubmit() {
-    console.log("fhfkshd")
     console.log(this.registrationform.value)
+    let lname = this.registrationform.value.lname;
+    let email = this.registrationform.value.email;
+    let mobile = this.registrationform.value.mobile;
+    let department = this.registrationform.value.department;
+    let query = this.registrationform.value.query;
+    let file = this.registrationform.value.file;
+
+    this.commonservice.getUserFormData(lname,email,mobile,department,query,file)
   }
 }

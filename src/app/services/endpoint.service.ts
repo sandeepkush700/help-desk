@@ -7,7 +7,7 @@ export class EndpointService {
 
   constructor() { }
 
-  hostUrl: string = "";
+  hostUrl: string = "http://localhost:3000";
 
-  userApi: string = `${this.hostUrl}/api/session.php`;
+  userApi: string = `${this.hostUrl}/user`;
 }

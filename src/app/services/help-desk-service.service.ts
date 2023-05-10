@@ -9,7 +9,7 @@ export class HelpDeskServiceService {
 
   constructor(private service:EndpointService, private http:HttpClient) { }
 
-  getUserFormData(formData){
+  getUserFormData(formData:any){
     return this.http.post(this.service.userApi,formData).toPromise();
   }
 }
