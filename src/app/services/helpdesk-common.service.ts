@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HelpDeskServiceService } from './help-desk-service.service'
+import {HelpdeskServiceService} from './helpdesk-service.service'
+
 @Injectable({
   providedIn: 'root'
 })
-export class HelpDeskCommomService {
+export class HelpdeskCommonService {
 
-  constructor(private helpservice: HelpDeskServiceService) { }
+  constructor(private helpdeskservice:HelpdeskServiceService) { }
 
   async getUserFormData(name: any, email: any, mobile: any, department: any, query: any, file: any) {
     let formData: any = new FormData();
@@ -15,7 +16,7 @@ export class HelpDeskCommomService {
     formData.append("department", department)
     formData.append("query", query)
     formData.append("attachment", file)
-    await this.helpservice.getUserFormData(formData).then((data: any) => {
+    await this.helpdeskservice.getUserFormData(formData).then((data: any) => {
       if(data.status=="success"){
         console.log("Data----->", data)
       }

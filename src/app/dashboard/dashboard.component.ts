@@ -1,47 +1,52 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
-import { HelpDeskCommomService } from '../services/help-desk-commom.service'
+import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms'
+import { HelpdeskCommonService} from '../services/helpdesk-common.service'
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
   registrationform: FormGroup | any
-  uploadedImage: File | undefined
+  uploadedImage: File |undefined
 
-  constructor(private commonservice: HelpDeskCommomService) { }
+  constructor(private commonservice: HelpdeskCommonService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.createForm()
   }
 
   createForm() {
 
     this.registrationform = new FormGroup({
-      name: new FormControl(''),
+      lname: new FormControl(''),
       email: new FormControl(''),
       mobile: new FormControl(''),
       department: new FormControl(''),
       query: new FormControl(''),
       file: new FormControl('')
 
-    })
+    }) 
   }
 
-  public onImageUpload(event: any) {
+  public onImageUpload(event:any) {
     this.uploadedImage = event.target.files[0];
     console.log(this.uploadedImage)
   }
- async onSubmit() {
+
+  onSubmit() {
     console.log(this.registrationform.value)
-    let name = this.registrationform.value.name;
+    let lname = this.registrationform.value.lname;
     let email = this.registrationform.value.email;
     let mobile = this.registrationform.value.mobile;
     let department = this.registrationform.value.department;
     let query = this.registrationform.value.query;
+    // let file = this.registrationform.value.file;
 
-   await this.commonservice.getUserFormData(name, email, mobile, department, query, this.uploadedImage)
+    this.commonservice.getUserFormData(lname,email,mobile,department,query,this.uploadedImage)
   }
 }
+
+
