@@ -10,4 +10,5 @@ export class EndpointService {
   hostUrl: string = "http://localhost:3000";
 
   userApi: string = `${this.hostUrl}/user`;
+  loginApi: string = `${this.hostUrl}/`
 }

@@ -10,6 +10,11 @@ export class HelpdeskServiceService {
 
   constructor(private http:HttpClient, private endpointservice:EndpointService) { }
 
+  userLogin(formData:any){
+    return this.http.post(this.endpointservice.loginApi,formData).toPromise();
+
+  }
+
   getUserFormData(formData:any){
     return this.http.post(this.endpointservice.userApi,formData).toPromise();
   }
