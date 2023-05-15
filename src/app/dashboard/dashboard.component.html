@@ -47,35 +47,38 @@
             </div>
             <div class="modal-body">
                 <form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
-
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" name="name" id="name" formControname="name">
+                        <input type="text" class="form-control" name="name" formControlName="name">
+
+                        <!-- <input type="text"  name="hello" id="name" formControname="hello"> -->
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email ID</label>
-                        <input type="text" class="form-control" name="email" id="email" formControname="email">
+                        <input type="email" name="email" class="form-control" formControlName="email">
                     </div>
 
                     <div class="mb-3">
                         <label for="mobile" class="form-label">Mobile</label>
-                        <input type="text" class="form-control" name="mobile" id="mobile" formControname="mobile">
+                        <input type="text" name="mobile" class="form-control" formControlName="mobile">
                       </div>
-
                       <div class="mb-3">
                         <label for="department" class="form-label">Department</label>
-                        <input type="text" class="form-control" name="department" id="department" formControname="department">
+                        <select name="department" id="" formControlName="department" class="form-control">
+                            <option value="">select</option>
+                            <option *ngFor="let d of dept" value="{{d}}">{{d}}</option>
+                        </select>
                       </div>
 
                       <div class="mb-3">
                         <label for="query" class="form-label">Query</label>
-                        <input type="text" class="form-control" name="query" id="query" formControname="query">
+                        <input type="text" name="query" class="form-control" formControlName="query">
                       </div>
 
                       <div class="mb-3">
                         <label for="file" class="form-label">File</label>
-                        <input type="file" class="form-control" name="file" id="file" formControname="file" (change)="onImageUpload($event)">
+                        <input type="file" class="form-control" name="file" formControlName="file" (change)="onImageUpload($event)"> 
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
